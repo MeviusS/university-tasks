@@ -1,4 +1,3 @@
-# from testsystem import test
 import turtle
 
 
@@ -52,13 +51,6 @@ def dragon_curve(number):
     return string
 
 
-# turtle.bgcolor("blue")
-# draw = turtle.Turtle()
-# turtle.color("white")
-# draw.color("red")
-# draw.speed(100000)
-
-
 def turtle_lib(number):
     movement = dragon_curve(number)
     movement_duration = len(movement)
@@ -71,10 +63,3 @@ def turtle_lib(number):
         i += 1
     turtle.done()
     return 0
-
-#
-# test(palindrome, "palindrome_strict.json")
-# test(twin_chars, "symbol_pairs.json")
-# test(chars_case_rotation, "lower_upper.json")
-# test(chars_replace, "exchange_symbols.json")
-# test(dragon_curve, "dragon_curve.json")

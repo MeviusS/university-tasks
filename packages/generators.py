@@ -26,6 +26,3 @@ def primes_gen(num):
 
 def search_div_of_num(num):
     return {num_div for i in range(1, int(num ** 0.5 + 1)) if num % i == 0 for num_div in (i, num // i)}
-
-
-# print(even_sort([1, 42, 322]))

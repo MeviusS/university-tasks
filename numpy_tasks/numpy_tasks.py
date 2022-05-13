@@ -100,11 +100,20 @@ def task_double_chess(lines=20, columns=20):
     return matr
 
 
-# the chuck function is WIP
-# def chukh(n):
-#     matr = matrix(n, n)
-#     matr[0, :] =
-#     return matr
+def task_chukh(n):
+    matr = matrix(n, n)
+    if n != 1:
+        small_matr = task_chukh(n - 1)
+        if n % 2 == 1:
+            matr[:, :] = 1
+            matr[1:, 1:] = small_matr[:, :]
+        else:
+            matr[:, :] = 2
+            matr[1:, 1:] = small_matr[:, :]
+        return matr
+    else:
+        matr[:, :] = 1
+        return matr
 
 print(f'task_10x10:\n{task_10x10()}\n')
 print(f'task_border:\n{task_border(7, 7)}\n')
@@ -116,3 +125,4 @@ print(f'task_1_to_100:\n{task_1_to_100()}\n')
 print(f'task_multiplication_table:\n{task_multiplication_table(12, 10)}\n')
 print(f'task_3_diags:\n{task_3_diags(6, 1, 2)}\n')
 print(f'task_double_chess:\n{task_double_chess(22, 22)}\n')
+print(f'task_chukh:\n{task_chukh(7)}\n')

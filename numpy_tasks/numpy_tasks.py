@@ -115,6 +115,38 @@ def task_chukh(n):
         matr[:, :] = 1
         return matr
 
+
+def remove_task(matr, k):
+    matr = np.array(matr)
+    indices = matr % k != 0
+    return matr[indices]
+
+
+def div_task(matr):
+    matr = np.array(matr)
+    indices = matr % 2 == 0
+    matr[indices] = matr[indices] // 2
+    return matr
+
+
+def prime_2_to_100_list_task(matr):
+    matr = np.array(matr)
+    prime_list = [1]
+    while matr.size > 0:
+        num = matr[0]
+        indices = matr % num != 0
+        matr = matr[indices]
+        prime_list.append(num)
+    return prime_list
+
+
+def Fib_task(acc_grade):
+    matr = np.array([[0, 1], [1, 1]])
+    for i in range(acc_grade):
+        matr = np.matmul(matr, matr)
+    return matr[1][1] / matr[1][0]
+
+
 print(f'task_10x10:\n{task_10x10()}\n')
 print(f'task_border:\n{task_border(7, 7)}\n')
 print(f'task_2_5x5:\n{task_2_5x5()}\n')
@@ -126,3 +158,7 @@ print(f'task_multiplication_table:\n{task_multiplication_table(12, 10)}\n')
 print(f'task_3_diags:\n{task_3_diags(6, 1, 2)}\n')
 print(f'task_double_chess:\n{task_double_chess(22, 22)}\n')
 print(f'task_chukh:\n{task_chukh(7)}\n')
+print(f'remove_task:\n{remove_task([10, 20, 1, 8, 30, 123], 5)}\n')
+print(f'div_task:\n{div_task([10, 20, 1, 8, 30, 123])}\n')
+print(f'prime_2_to_100_list_task:\n{prime_2_to_100_list_task([num for num in range(2, 101)])}\n')
+print(f'Fib_task:\n{Fib_task(5)}\n')
